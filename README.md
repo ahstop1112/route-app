@@ -33,22 +33,24 @@ It is a simple Route App which is using Google Map API and using React + SASS + 
   using 'react-geocode' for changing the input "Starting Point" and "Drop-off Point" addresses to Lag and Lng.
   
 - Display Google Map and include the "Starting Point" and "Drop-off Point" Markers on the Map
-  Using 'react-goole-maps' library, <GoogleMap>, <DirectionRenderer>, <Marker>
-  <GoogleMap className="mapContainer" defaultZoom={defaultZoom}
+  Using 'react-goole-maps' library, <GoogleMap>, <DirectionRenderer>, <Marker>.
+        
+        <GoogleMap className="mapContainer" defaultZoom={defaultZoom}
       maxZoom={20} minZoom={8} center={centerPos}
-      onReady={this.adjustMap} defaultCenter={new window.google.maps.LatLng(centerPos.lat, centerPos.lng)}
-  >
-    {fromPos.lat !== 0 && toPos.lat !== 0 && <DirectionRender
+      onReady={this.adjustMap} defaultCenter={new window.google.maps.LatLng(centerPos.lat, centerPos.lng)}>
+      
+      {fromPos.lat !== 0 && toPos.lat !== 0 && <DirectionRender
         fromPos={fromPos}
         toPos={toPos}
-        errors={errors}
-    />}
-    { markers.length > 0 && markers.map((marker, index) => {
-        const lat = parseFloat(marker[0]);
-        const lng = parseFloat(marker[1]);
-        const iconImg = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-
-        return <Marker
+        errors={errors}/>}
+        
+        { markers.length > 0 && markers.map((marker, index) => {
+        
+          const lat = parseFloat(marker[0]);
+          const lng = parseFloat(marker[1]);
+          const iconImg = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        
+          return <Marker
                 key={ `marker_${marker[0]}_${marker[1]}` }
                 label={{
                     text: (index+1).toString(),
@@ -57,9 +59,9 @@ It is a simple Route App which is using Google Map API and using React + SASS + 
                 }}
                 icon={{url: iconImg}}
                 position={{lat, lng}}
-            />
-    }) }
-</GoogleMap>
+            /> }) }
+          </GoogleMap>
+   
  - If the addresses are not valid (cannot find the address and return the Lat and Lng), it will empty the input fields and markers. (Same as clicking the Reset button)
   
 ### Mock API (Dummy data)
