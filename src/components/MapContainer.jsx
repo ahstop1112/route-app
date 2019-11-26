@@ -40,7 +40,6 @@ export class MapContainer extends Component {
   async fetchMapAPI(){  //test MockAPI
     const { fromAddress, toAddress } = this.state;
     const response = await postAddressToAPI(fromAddress, toAddress); //if success, it will return the token
-    console.log(response);
     if (!response) return;
 
     const token = response.data.token;
@@ -131,11 +130,8 @@ export class MapContainer extends Component {
         this.setState({
           toPos: {pos: {lat, lng}, name: toAdd} //Storing the REAL ending points
         })
-
-        // console.log("toPos: " + this.state.toPos);
       },
       error => {
-        //console.error(error);
         this.setState({
           errors: 'Please input the correct address', //handle wrong address
           fromAddress: '',
