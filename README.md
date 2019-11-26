@@ -33,7 +33,7 @@ It is a simple Route App which is using Google Map API and using React + SASS + 
   using 'react-geocode' for changing the input "Starting Point" and "Drop-off Point" addresses to Lag and Lng.
   
 - Display Google Map and include the "Starting Point" and "Drop-off Point" Markers on the Map
-  Using 'react-goole-maps' library, <GoogleMap>, <DirectionRenderer>, <Marker>.
+  Using 'react-goole-maps' library, GoogleMap, DirectionRenderer, <Marker.
         
         <GoogleMap className="mapContainer" defaultZoom={defaultZoom}
       maxZoom={20} minZoom={8} center={centerPos}
@@ -70,7 +70,7 @@ It is a simple Route App which is using Google Map API and using React + SASS + 
 4. It will pass the lat and lng to async function postAddressToAPI(fromAddress, toAddress) and it will call the "Post" action to "/route".
 3. If it returns success, it will return the token (dummy data).
 4. Passing the token for getting the dummy data from API, it will call "getMarkersByToken(token)".
-5. If the response status is "success", it will return the path array, and using the 'react-google-maps' library to display the markers on the <Map />
+5. If the response status is "success", it will return the path array, and using the 'react-google-maps' library to display the markers on the Map.
 6. If the resonse status is not success, and return other error message (even the status is 200), it will display the error message on the Side Bar.
 
 ### Improvement
